@@ -45,7 +45,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Build documentation
-        uses: ammaraskar/sphinx-action@master
+        run: |
+          poetry run sphinx-build -M html source build
         with:
           docs-folder: "docs/"
 
