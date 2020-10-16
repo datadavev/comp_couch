@@ -46,9 +46,8 @@ jobs:
 
       - name: Build documentation
         run: |
+          cd docs
           poetry run sphinx-build -M html source build
-        with:
-          docs-folder: "docs/"
 
       - name: Commit documentation changes
         run: |
